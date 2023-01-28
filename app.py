@@ -109,7 +109,7 @@ def plotMap(zoom=15, map_type='roadmap'):
     print('palette length:', len(Set3))
     
       
-    p.triangle(x='longitude', y='latitude', size=10, alpha=0.9, color='blue', source= dict_pos)
+    p.circle(x='longitude', y='latitude', size=10, alpha=0.9, color='blue', source= dict_pos)
    
     html = file_html(p, CDN, "pickup_dropoff")
     return html
