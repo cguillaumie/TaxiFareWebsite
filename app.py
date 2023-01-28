@@ -21,7 +21,8 @@ passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3
                                    
 GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
                                    
-GEOCODE_URL_pickup = "https://maps.googleapis.com/maps/api/geocode/json?address="+pick_up_adress+"&key="+GOOGLE_API_KEY
+#https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=YOUR_API_KEY  
+GEOCODE_URL_pickup = "https://maps.googleapis.com/maps/api/directions/json?origin="pick_up_adress"&destination="dropoff_adress"&key="+GOOGLE_API_KEY
                                    
 geo_response = requests.request("GET", GEOCODE_URL_pickup)
                                 
