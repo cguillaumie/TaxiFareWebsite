@@ -4,7 +4,7 @@ import numpy as np
 import requests
 import json
 import datetime
-import os
+
 
 
 pick_up_adress = st.text_input("select pick-up adress", value = "45 Rockefeller Plaza, New York, NY 10111, United States")
@@ -20,10 +20,7 @@ time_entry = st.time_input("Select a time")
                                                        
 passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3, 4,5])
                                    
-st.write(
-    "Has environment variables been set:",
-    os.environ["GOOGLE_API_KEY"] == st.secrets["GOOGLE_API_KEY"],
-)
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
                                    
 # GEOCODE_URL_dir = f'https://maps.googleapis.com/maps/api/directions/json?origin={pick_up_adress}&destination={dropoff_adress}&key={GOOGLE_API_KEY}'
 
