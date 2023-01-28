@@ -33,12 +33,11 @@ GEOCODE_URL_dropoff= f'https://maps.googleapis.com/maps/api/geocode/json?address
 geo_response1 = requests.request("GET", GEOCODE_URL_pickup)
                                 
 result1 = json.loads(geo_response1.text)
-st.text(result1)
   
 geo_response2 = requests.request("GET", GEOCODE_URL_dropoff)
 
 result2 = json.loads(geo_response2.text)
-st.text(result2)
+
 pickup_latitude = result1['results'][0]['geometry']['location']['lat']
 
 pickup_longitude = result1['results'][0]['geometry']['location']['lng']
@@ -47,14 +46,9 @@ dropoff_latitude = result2['results'][0]['geometry']['location']['lat']
 
 dropoff_longitude = result2['results'][0]['geometry']['location']['lng']
 
-
                                                                
 url = "https://taxifare.lewagon.ai/predict"
-                                 
-if url == "https://taxifare.lewagon.ai/predict":
-                                   
-    st.markdown("Maybe you want to use your own API for the prediction, not the one provided by Le Wagon...")
-                    
+                                                   
 params =  {"pickup_datetime": f'{date_entry} {time_entry}',
                       
             "pickup_longitude": pickup_longitude,
@@ -69,7 +63,7 @@ params =  {"pickup_datetime": f'{date_entry} {time_entry}',
                       
 request = requests.get(url,params=params)
            
-response = request.json()["fare"]
+response = round(request.json()["fare"],2)
                           
 st.write(f'You will pay {response} $')
                           
