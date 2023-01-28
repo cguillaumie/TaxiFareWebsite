@@ -26,7 +26,7 @@ GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
 
 GEOCODE_URL_pickup = f'https://maps.googleapis.com/maps/api/geocode/json?address={pick_up_adress}&key={GOOGLE_API_KEY}'
 
-GEOCODE_URL_dropoff= f'https://maps.googleapis.com/maps/api/geocode/json?address={drop_off_adress}&key={GOOGLE_API_KEY}'
+GEOCODE_URL_dropoff= f'https://maps.googleapis.com/maps/api/geocode/json?address={dropoff_adress}&key={GOOGLE_API_KEY}'
 
                                    
 geo_response1 = requests.request("GET", GEOCODE_URL_pickup)
