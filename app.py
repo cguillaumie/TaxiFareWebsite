@@ -38,9 +38,9 @@ geo_response1 = requests.request("GET", GEOCODE_URL_dropoff)
                                  
 result1 = json.loads(geo_response1.text)
                                  
-dropoff_latitude = result1["results"][0]["geometry"]["location"]["lat"]
+#dropoff_latitude = result1["results"][0]["geometry"]["location"]["lat"]
                                  
-dropoff_longitude = result1["results"][0]["geometry"]["location"]["lng"]
+#dropoff_longitude = result1["results"][0]["geometry"]["location"]["lng"]
                                  
 url = "https://taxifare.lewagon.ai/predict"
                                  
