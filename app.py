@@ -29,7 +29,7 @@ pickup_latitude = result["results"][0]["geometry"]["location"]["lat"]
                                 
 pickup_longitude = result["results"][0]["geometry"]["location"]["lng"]
                                 
-GEOCODE_URL_dropoff =  "votre code API sur GCP à créer”
+GEOCODE_URL_dropoff =  "votre code API sur GCP à créer"
                                 
 geo_response1 = requests.request("GET", GEOCODE_URL_dropoff)
                                  
