@@ -19,7 +19,7 @@ time_entry = st.time_input("Select a time")
                                                        
 passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3, 4,5])
                                    
-GOOGLE_API_KEY = "AIzaSyAhPa5gfVrsme0LWGhwWa66dSr4TvmLNQs"
+GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
                                    
 GEOCODE_URL_pickup = "https://maps.googleapis.com/maps/api/geocode/json?address="+pick_up_adress+"&key="+GOOGLE_API_KEY
                                    
