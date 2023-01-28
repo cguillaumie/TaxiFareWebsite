@@ -41,8 +41,8 @@ dropoff_longitude = result1["results"][0]["geometry"]["location"]["lng"]
                                  
 url = "https://taxifare.lewagon.ai/predict"
                                  
-if url == 'https://taxifare.lewagon.ai/predict’:
-                                 
+if url == "https://taxifare.lewagon.ai/predict":
+                                   
     st.markdown("Maybe you want to use your own API for the prediction, not the one provided by Le Wagon...")
                     
 params =  {"pickup_datetime": f’{date_entry} {time_entry}’,
