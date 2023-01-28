@@ -59,26 +59,16 @@ params =  {"pickup_datetime": f'{date_entry} {time_entry}',
                       
 request = requests.get(url,params=params)
            
-response = request.json()["fare”]
+response = request.json()["fare"]
                           
-st.write(f’You will pay {response} $’)
+st.write(f'You will pay {response} $')
                           
 dict_pos = {
-  
-    'longitude’: [pickup_longitude,dropoff_longitude],
-  
-    'latitude’: [pickup_latitude,dropoff_latitude],
-  
+    "longitude": [pickup_longitude,dropoff_longitude],  
+    "latitude": [pickup_latitude,dropoff_latitude],
 }
                           
 map_data = pd.DataFrame(dict_pos,index=[0,1])
                           
 st.map(map_data)
                           
-#url1 = f’https://hugo-taxi-fare-model-arm64-rdi6i62eca-ew.a.run.app/predict?pickup_datetime={date_entry} {time_entry}&pickup_longitude={pickup_longitude}&pickup_latitude={pickup_latitude}&dropoff_longitude={dropoff_longitude}&dropoff_latitude={dropoff_latitude}&passenger_count={passenger_count}'
-                          
-#request1 = requests.get(url1)
-                          
-#request1.json()[“fare”]
-                          
-
