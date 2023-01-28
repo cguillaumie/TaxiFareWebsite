@@ -48,15 +48,15 @@ if url == "https://taxifare.lewagon.ai/predict":
 params =  {"pickup_datetime": f'{date_entry} {time_entry}',
                       
             'pickup_longitude’: pickup_longitude,
-           
+                      
             'pickup_latitude’: pickup_latitude,
-           
+                      
             'dropoff_longitude’: dropoff_longitude,
-           
+                      
             'dropoff_latitude’: dropoff_latitude,
-           
+                      
             'passenger_count’: passenger_count}
-           
+                      
 request = requests.get(url,params=params)
            
 response = request.json()["fare”]
