@@ -94,8 +94,8 @@ st.map(map_data)
   
 bokeh_width, bokeh_height = 1024,768
 
-def plotAll(data, zoom=15, map_type='roadmap'):
-    gmap_options = GMapOptions(lat=data[0][1], lng=data[0][2], 
+def plotMap(data, zoom=15, map_type='roadmap'):
+    gmap_options = GMapOptions(lat=pickup_longitude, pickup_longitude, 
                                map_type=map_type, zoom=zoom)
     p = gmap(GOOGLE_API_KEY, gmap_options, title='Taxifare Map', 
              width=bokeh_width, height=bokeh_height)
@@ -110,13 +110,11 @@ def plotAll(data, zoom=15, map_type='roadmap'):
     
       
     if result1 is not None:
-        p.triangle([pickup_longitude], [pickup_latitude], size=10, alpha=0.9, color='red')
+        p.triangle([pickup_longitude], [pickup_longitude], size=10, alpha=0.9, color='red')
     if result2 is not None:
         p.triangle([dropoff_longitude], [dropoff_latitude], size=10, alpha=0.9, color='blue')
     html = file_html(p, CDN, "pickup_dropoff")
     return html
   
-if len(data) > 0:
-    components.html(plotAll(data, 15, 'satellite'), height = bokeh_height + 100, width = bokeh_width + 100)
-else:
-    st.write('no location data found')
+components.html(plotMap(data, 15, 'satellite'), height = bokeh_height + 100, width = bokeh_width + 100)
+
