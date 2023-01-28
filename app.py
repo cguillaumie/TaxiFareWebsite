@@ -112,7 +112,7 @@ def plotAll(data, zoom=15, map_type='roadmap'):
     if result1 is not None:
         p.triangle([pickup_longitude], [pickup_latitude], size=10, alpha=0.9, color='red')
     if result2 is not None:
-        p.triangle([dropoff_longitude], dropoff_latitude], size=10, alpha=0.9, color='blue')
+        p.triangle([dropoff_longitude], [dropoff_latitude], size=10, alpha=0.9, color='blue')
     html = file_html(p, CDN, "pickup_dropoff")
     return html
   
