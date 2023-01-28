@@ -114,5 +114,5 @@ def plotMap(zoom=15, map_type='roadmap'):
     html = file_html(p, CDN, "pickup_dropoff")
     return html
   
-components.html(plotMap(15, 'satellite'), height = bokeh_height, width = bokeh_width)
+components.html(plotMap(15, 'satellite'), height = bokeh_height +100 , width = bokeh_width +100)
 
