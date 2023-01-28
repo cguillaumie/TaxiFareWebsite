@@ -95,7 +95,7 @@ st.map(map_data)
 bokeh_width, bokeh_height = 1024,768
 
 def plotMap(zoom=15, map_type='roadmap'):
-    gmap_options = GMapOptions(lat=pickup_latitude, lng=pickup_longitude, map_type=map_type, zoom=zoom)  
+    gmap_options = GMapOptions(lat=dict_pos[0], lng=dict_pos[1], map_type=map_type, zoom=zoom)  
     p = gmap(GOOGLE_API_KEY, gmap_options, title='Taxifare Map', width=bokeh_width, height=bokeh_height)
     
     latArr = []
