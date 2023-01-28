@@ -45,8 +45,8 @@ if url == "https://taxifare.lewagon.ai/predict":
                                    
     st.markdown("Maybe you want to use your own API for the prediction, not the one provided by Le Wagon...")
                     
-params =  {"pickup_datetime": f’{date_entry} {time_entry}’,
-           
+params =  {"pickup_datetime": f'{date_entry} {time_entry}',
+                      
             'pickup_longitude’: pickup_longitude,
            
             'pickup_latitude’: pickup_latitude,
