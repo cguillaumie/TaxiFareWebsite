@@ -106,37 +106,14 @@ def plotAll(data, zoom=15, map_type='roadmap'):
     labelArr = []
     colidx = 0
     colpalette = Category20.get(20)
-    print(‘palette length: ‘, len(Set3))
+    print('palette length:', len(Set3))
     
-    for x in data:
-        if(x[4] == ‘Stationary’):
-          latArr.append(x[1])
-          longArr.append(x[2])
-          labelArr.append(x[3])
-          if(colidx == len(colpalette)):
-              colidx=0
-          colorArr.append(colpalette[colidx])
-          colidx+=1
-    
-    print(‘latArr: ‘, latArr)
-    print(‘longArr: ‘, longArr)
-    print(‘colorArr: ‘, colorArr)
-    print(‘label: ‘, labelArr)
-    
-    source = ColumnDataSource(dict(
-                x=longArr,
-                y=latArr,
-                color=colorArr,
-                label=labelArr
-            ))
-    
-    center = p.circle(x=’x’, y=’y’, size=10, alpha=0.9, color=’color’, legend_group=’label’, source=source)
-    
-    if RESIDENCE_LATLONG is not None:
-        p.triangle([RESIDENCE_LATLONG[1]], [RESIDENCE_LATLONG[0]], size=10, alpha=0.9, color=’red’)
-    if BUSINESS_LATLONG is not None:
-        p.triangle([BUSINESS_LATLONG[1]], [BUSINESS_LATLONG[0]], size=10, alpha=0.9, color=’blue’)
-    html = file_html(p, CDN, "User locations")
+      
+    if result1 is not None:
+        p.triangle([pickup_longitude], [pickup_latitude], size=10, alpha=0.9, color=’red’)
+    if result2 is not None:
+        p.triangle([dropoff_longitude], dropoff_latitude], size=10, alpha=0.9, color=’blue’)
+    html = file_html(p, CDN, "pickup_dropoff")
     return html
   
 if len(data) > 0:
