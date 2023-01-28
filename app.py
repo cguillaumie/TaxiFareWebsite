@@ -115,5 +115,5 @@ def plotMap(zoom=10, map_type='roadmap'):
     html = file_html(p, CDN, "pickup_dropoff")
     return html
   
-components.html(plotMap(25, 'roadmap'), height = bokeh_height, width = bokeh_width)
+components.html(plotMap(10, 'roadmap'), height = bokeh_height, width = bokeh_width)
 
