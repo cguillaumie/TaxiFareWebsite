@@ -82,11 +82,7 @@ response = round(request.json()["fare"],2)
                           
 st.write(f'You will pay {response} $')
                           
-dict_pos = {
-    "longitude": [pickup_longitude,dropoff_longitude],  
-    "latitude": [pickup_latitude,dropoff_latitude],
-}
-                          
+
 #map_data = pd.DataFrame(dict_pos,index=[0,1])
                           
 #st.map(map_data)
@@ -94,10 +90,16 @@ dict_pos = {
   
 bokeh_width, bokeh_height = 800,600
 
-centered_long = (pickup_longitude + dropoff_longitude) /2
-centered_lat = (pickup_latitude + dropoff_latitude) / 2
+
 
 def plotMap(zoom=10, map_type='roadmap'):
+    dict_pos = {
+    "longitude": [pickup_longitude,dropoff_longitude],  
+    "latitude": [pickup_latitude,dropoff_latitude],
+    }
+    centered_long = (pickup_longitude + dropoff_longitude) /2
+    centered_lat = (pickup_latitude + dropoff_latitude) / 2                     
+    
     gmap_options = GMapOptions(lat=centered_lat, lng=centered_long, map_type=map_type, zoom=zoom)  
     p = gmap(GOOGLE_API_KEY, gmap_options, title='Taxifare Map', width=bokeh_width, height=bokeh_height)
     
