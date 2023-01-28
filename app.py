@@ -92,7 +92,7 @@ dict_pos = {
 #st.map(map_data)
                           
   
-bokeh_width, bokeh_height = 1024,768
+bokeh_width, bokeh_height = 800,600
 
 centered_long = (pickup_longitude + dropoff_longitude) /2
 centered_lat = (pickup_latitude + dropoff_latitude) / 2
@@ -101,13 +101,13 @@ def plotMap(zoom=10, map_type='roadmap'):
     gmap_options = GMapOptions(lat=centered_lat, lng=centered_long, map_type=map_type, zoom=zoom)  
     p = gmap(GOOGLE_API_KEY, gmap_options, title='Taxifare Map', width=bokeh_width, height=bokeh_height)
     
-    latArr = []
-    longArr = []
-    colorArr = []
-    labelArr = []
-    colidx = 0
-    colpalette = Category20.get(20)
-    print('palette length:', len(Set3))
+    #latArr = []
+    #longArr = []
+    #colorArr = []
+    #labelArr = []
+    #colidx = 0
+    #colpalette = Category20.get(20)
+    #print('palette length:', len(Set3))
     
       
     p.circle(x='longitude', y='latitude', size=10, alpha=0.9, color='blue', source= dict_pos)
