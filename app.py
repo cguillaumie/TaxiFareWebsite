@@ -15,11 +15,11 @@ date_entry = st.date_input("Select a date")
                            
 time_entry = st.time_input("Select a time")
                                                        
-passenger_count = st.select_slider('Select number of passenger’, options=[1,2, 3, 4,5])
+passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3, 4,5])
                                    
-GOOGLE_API_KEY = "AIzaSyCLqNLI6WPorFPjRbbXOBEXKhhLfQn9o5c”
+GOOGLE_API_KEY = "AIzaSyCLqNLI6WPorFPjRbbXOBEXKhhLfQn9o5c"
                                    
-GEOCODE_URL_pickup = 'https://maps.googleapis.com/maps/api/geocode/json?address='+pick_up_adress+'&key='+GOOGLE_API_KEY
+GEOCODE_URL_pickup = "https://maps.googleapis.com/maps/api/geocode/json?address="+pick_up_adress+"&key="+GOOGLE_API_KEY
                                    
 geo_response = requests.request("GET”, GEOCODE_URL_pickup)
                                 
