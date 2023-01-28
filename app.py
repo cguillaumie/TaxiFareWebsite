@@ -21,27 +21,12 @@ passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3
                                    
 GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
                                    
-#https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=YOUR_API_KEY  
 GEOCODE_URL_pickup = f'https://maps.googleapis.com/maps/api/directions/json?origin={pick_up_adress}&destination={dropoff_adress}&key={GOOGLE_API_KEY}'
                                    
 geo_response = requests.request("GET", GEOCODE_URL_pickup)
                                 
 result = json.loads(geo_response.text)
-                                
-#pickup_latitude = result["results"][0]["geometry"]["location"]["lat"]
-                                
-#pickup_longitude = result["results"][0]["geometry"]["location"]["lng"]
-                                
-#GEOCODE_URL_dropoff =  "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
-                                
-#geo_response1 = requests.request("GET", GEOCODE_URL_dropoff)
-                                 
-#result1 = json.loads(geo_response1.text)
-                                 
-#dropoff_latitude = result1["results"][0]["geometry"]["location"]["lat"]
-                                 
-#dropoff_longitude = result1["results"][0]["geometry"]["location"]["lng"]
-                                 
+                                                               
 url = "https://taxifare.lewagon.ai/predict"
                                  
 if url == "https://taxifare.lewagon.ai/predict":
