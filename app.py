@@ -4,11 +4,14 @@ import numpy as np
 import requests
 import json
 
-pick_up_adress = st.text_input('select pick-up adress’, value = "45 Rockefeller Plaza, New York, NY 10111, United States")
+pick_up_adress = st.text_input("select pick-up adress", value = "45 Rockefeller Plaza, New York, NY 10111, United States")
                                
-dropoff_adress = st.text_input('select dropoff adress’ , value = "11 Wall St, New York, NY 10005, United States”)
+dropoff_adress = st.text_input("select dropoff adress" , value = "11 Wall St, New York, NY 10005, United States”)
+                               
 date_entry = st.date_input('Select a date’)
+                           
 time_entry = st.time_input('Select a time’)
+                           
 passenger_count = st.select_slider('Select number of passenger’, options=[1,2, 3, 4,5])
 GOOGLE_API_KEY = "AIzaSyCLqNLI6WPorFPjRbbXOBEXKhhLfQn9o5c”
 GEOCODE_URL_pickup = 'https://maps.googleapis.com/maps/api/geocode/json?address='+pick_up_adress+'&key='+GOOGLE_API_KEY
