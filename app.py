@@ -94,7 +94,7 @@ st.map(map_data)
   
 bokeh_width, bokeh_height = 1024,768
 
-def plotMap(data, zoom=15, map_type='roadmap'):
+def plotMap(zoom=15, map_type='roadmap'):
     gmap_options = GMapOptions(lat=pickup_latitude, lon=pickup_longitude, map_type=map_type, zoom=zoom)  
     p = gmap(GOOGLE_API_KEY, gmap_options, title='Taxifare Map', width=bokeh_width, height=bokeh_height)
     
@@ -114,5 +114,5 @@ def plotMap(data, zoom=15, map_type='roadmap'):
     html = file_html(p, CDN, "pickup_dropoff")
     return html
   
-components.html(plotMap(data, 15, 'satellite'), height = bokeh_height, width = bokeh_width)
+components.html(plotMap(15, 'satellite'), height = bokeh_height, width = bokeh_width)
 
