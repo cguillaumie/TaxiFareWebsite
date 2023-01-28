@@ -25,19 +25,20 @@ GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
 
 
 GEOCODE_URL_pickup = f'https://maps.googleapis.com/maps/api/geocode/json?address={pick_up_adress}&key={GOOGLE_API_KEY}'
-st.text(GEOCODE_URL_pickup)
+
 
 GEOCODE_URL_dropoff= f'https://maps.googleapis.com/maps/api/geocode/json?address={dropoff_adress}&key={GOOGLE_API_KEY}'
-st.text(GEOCODE_URL_dropoff)
+
                                    
 geo_response1 = requests.request("GET", GEOCODE_URL_pickup)
                                 
 result1 = json.loads(geo_response1.text)
+st.text(result1)
   
 geo_response2 = requests.request("GET", GEOCODE_URL_dropoff)
 
 result2 = json.loads(geo_response2.text)
-
+st.text(result2)
 pickup_latitude = result1['results'][0]['geometry']['location']['lat']
 
 pickup_longitude = result1['results'][0]['geometry']['location']['lng']
