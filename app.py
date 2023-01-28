@@ -87,9 +87,9 @@ dict_pos = {
     "latitude": [pickup_latitude,dropoff_latitude],
 }
                           
-map_data = pd.DataFrame(dict_pos,index=[0,1])
+#map_data = pd.DataFrame(dict_pos,index=[0,1])
                           
-st.map(map_data)
+#st.map(map_data)
                           
   
 bokeh_width, bokeh_height = 1024,768
