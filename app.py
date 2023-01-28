@@ -4,7 +4,7 @@ import numpy as np
 import requests
 import json
 import datetime
-
+import os
 
 
 pick_up_adress = st.text_input("select pick-up adress", value = "45 Rockefeller Plaza, New York, NY 10111, United States")
