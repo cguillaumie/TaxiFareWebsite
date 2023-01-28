@@ -28,15 +28,15 @@ geo_response = requests.request("GET", GEOCODE_URL_pickup)
                                 
 result = json.loads(geo_response.text)
                                 
-pickup_latitude = result["results"][0]["geometry"]["location"]["lat"]
+#pickup_latitude = result["results"][0]["geometry"]["location"]["lat"]
                                 
-pickup_longitude = result["results"][0]["geometry"]["location"]["lng"]
+#pickup_longitude = result["results"][0]["geometry"]["location"]["lng"]
                                 
-GEOCODE_URL_dropoff =  "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
+#GEOCODE_URL_dropoff =  "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
                                 
-geo_response1 = requests.request("GET", GEOCODE_URL_dropoff)
+#geo_response1 = requests.request("GET", GEOCODE_URL_dropoff)
                                  
-result1 = json.loads(geo_response1.text)
+#result1 = json.loads(geo_response1.text)
                                  
 #dropoff_latitude = result1["results"][0]["geometry"]["location"]["lat"]
                                  
