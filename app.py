@@ -21,11 +21,31 @@ passenger_count = st.select_slider("Select number of passenger", options=[1,2, 3
                                    
 GOOGLE_API_KEY = "AIzaSyCsUnUor-GuaCrn7xivVkOVwTSf0XtagTU"
                                    
-GEOCODE_URL_pickup = f'https://maps.googleapis.com/maps/api/directions/json?origin={pick_up_adress}&destination={dropoff_adress}&key={GOOGLE_API_KEY}'
+# GEOCODE_URL_dir = f'https://maps.googleapis.com/maps/api/directions/json?origin={pick_up_adress}&destination={dropoff_adress}&key={GOOGLE_API_KEY}'
+
+
+GEOCODE_URL_pickup = f'https://maps.googleapis.com/maps/api/geocode/json?address={pick_up_adress}&key={GOOGLE_API_KEY}'
+
+GEOCODE_URL_dropoff= f'https://maps.googleapis.com/maps/api/geocode/json?address={drop_off_adress}&key={GOOGLE_API_KEY}'
+
                                    
-geo_response = requests.request("GET", GEOCODE_URL_pickup)
+geo_response1 = requests.request("GET", GEOCODE_URL_pickup)
                                 
-result = json.loads(geo_response.text)
+result1 = json.loads(geo_response1.text)
+  
+geo_response2 = requests.request("GET", GEOCODE_URL_dropoff)
+
+result2 = json.loads(geo_response2.text)
+
+pickup_latitude = result1['results'][0]['geometry']['location']['lat']
+
+pickup_longitude = result1['results'][0]['geometry']['location']['lng']
+
+dropoff_latitude = result2['results'][0]['geometry']['location']['lat']
+
+dropoff_longitude = result2['results'][0]['geometry']['location']['lng']
+
+
                                                                
 url = "https://taxifare.lewagon.ai/predict"
                                  
