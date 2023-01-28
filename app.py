@@ -4,6 +4,7 @@ import numpy as np
 import requests
 import json
 import datetime
+import bokeh
 
 from bokeh.io import show
 from bokeh.plotting import gmap
