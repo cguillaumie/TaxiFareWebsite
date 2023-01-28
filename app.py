@@ -5,7 +5,7 @@ import requests
 import json
 import datetime
 
-
+st.title("Taxifare Website")
 
 pick_up_adress = st.text_input("select pick-up adress", value = "45 Rockefeller Plaza, New York, NY 10111, United States")
 
