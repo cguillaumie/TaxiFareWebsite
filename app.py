@@ -65,8 +65,8 @@ response = round(request.json()["fare"],2)
                           
 st.write(f'You will pay {response} $')
                           
-#map_data = pd.DataFrame(dict_pos,index=[0,1])                          
-#st.map(map_data)
+map_data = pd.DataFrame(dict_pos,index=[0,1])                          
+st.map(map_data)
                           
 bokeh_width, bokeh_height = 800,600
 
