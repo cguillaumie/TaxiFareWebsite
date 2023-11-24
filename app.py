@@ -83,5 +83,11 @@ def plotMap(zoom=10, map_type='roadmap'):
   
 components.html(plotMap(11, 'roadmap'), height = bokeh_height, width = bokeh_width)
 
+
+dict_pos = {
+    "longitude": [pickup_longitude,dropoff_longitude],  
+    "latitude": [pickup_latitude,dropoff_latitude],
+    }
+
 map_data = pd.DataFrame(dict_pos,index=[0,1])                          
 st.map(map_data)
